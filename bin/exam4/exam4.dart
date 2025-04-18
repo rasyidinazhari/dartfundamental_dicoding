@@ -1,3 +1,5 @@
+import '../exam1/exam1.dart';
+
 class DicodingStudent {
   String fullName;
   int age;
@@ -6,16 +8,20 @@ class DicodingStudent {
 
   int incrementAge() {
     // TODO 1
-
-    return 0;
+    var age = this.age + 1;
+    return age;
 
     // End of TODO 1
   }
 
   Future<String> getStudentInfo() {
     // TODO 2
-
-    return Future.value("");
+    var fullName = this.fullName;
+    // var age = this.age;
+    return Future.delayed(Duration(seconds: 3), (){
+      var studentInfo = 'Nama Lengkap: $fullName, Umur: $age tahun';
+      return studentInfo;
+    });
 
     // End of TODO 2
   }
@@ -24,7 +30,8 @@ class DicodingStudent {
 dynamic createStudent() {
   // TODO 3
 
-  return null;
+  var dicodingStudent = DicodingStudent('rasyidinazhari', 20);
+  return dicodingStudent;
 
   // End of TODO 3
 }
